@@ -1,15 +1,15 @@
 <template>
  <div id="page">
      <Header></Header>
-    <todo></todo>
+    <Todo></Todo>
     <Footer></Footer>
  </div>
 </template>
 
 <script type="text/ecmascript-6">
- import Header from './todo/header.vue';
- import Todo from './todo/todo.vue';
- import Footer from './todo/footer.jsx';
+ import Header from './layout/Header.vue';
+ import Todo from './views/Todo.vue';
+ import Footer from './layout/Footer.jsx';
 
 export default {
 

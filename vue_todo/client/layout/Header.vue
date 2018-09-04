@@ -1,16 +1,17 @@
 <template>
   <header class="main-header">
-    <h1>Todo</h1>
+    <div>todo</div>
   </header>
 </template>
-<style lang = 'scss' scoped>
+<style lang='scss' scoped>
 .main-header{
-  text-align:center
-  h1{
+    text-align:center;
+    div{
     font-size:100px;
-    color:rgba(175,47,47,0.6);
+    color:rgba(175,47,47,1);
     font-weight:500;
     margin:20px;
-  }
+    }
+   
 }
 </style>

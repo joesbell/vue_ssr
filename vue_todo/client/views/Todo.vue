@@ -7,14 +7,14 @@
       placeholder="接下来要做什么"
       @keyup.enter="addTodo"
     >
-    <item 
+    <Item 
       :todo='todo'
       v-for="todo in filterdTodos"
       :key="todo.id"
       @del="deleteTodo"
     />
     <!-- @keyup 也就等于 v-on:keyup -->
-    <tabs 
+    <Tabs 
       :filter = 'filter' 
       :todos="todos"
       @toggle='toggleFilter'
@@ -24,8 +24,8 @@
   </section>
 </template>
 <script>
-import Item from './item.vue'
-import Tabs from './tabs.vue'
+import Item from './Item.vue'
+import Tabs from './Tabs.vue'
 let id = 0
 export default {
   data() {

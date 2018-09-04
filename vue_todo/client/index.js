@@ -1,5 +1,5 @@
 import Vue from 'Vue'
-import App from './app.vue'
+import App from './App.vue'
 import "./assets/px.scss"
 
 // const root=document.createElement("div")

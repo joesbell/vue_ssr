@@ -13,7 +13,7 @@ const config={
         filename: "bundle.js",
         path:path.join(__dirname,"dist")
     },
-    module:{
+    module:{ 
         rules:[
             {
                 test:/\.js$/,
@@ -142,7 +142,7 @@ if(isDev){
             name:"vendor"
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name:'runtime'
+            name:'difftime'
         })
     )
 }
