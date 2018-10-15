@@ -1,15 +1,16 @@
-// webpack版本：^ 3.10.0
-// vue - loader 版本：^ 13.6.0
-// webpack - dev - server版本:@^ 2.9.7
+
 const path = require("path")
+
 const isDev = process.env.NODE_ENV === "development"
 const createVueLoader=require("./vue-loader.config")
 const config = {
+    mode: process.env.NODE_ENV,//development||production
     target: "web",
     entry: path.resolve("client/index.js"),
     output: {
         filename: "bundle.js",
-        path: path.join(__dirname, "../dist")
+        path: path.join(__dirname, "../dist"),
+        // publicPath:"/public/"
     },
     module: {
         rules: [
@@ -21,9 +22,13 @@ const config = {
                 loader: "babel-loader",
                 exclude:/node_modules/,
                 // babel-preset-latest最新的es6转换规则
-                query: {
-                    presets: ['latest'] //按照最新的ES6语法规则去转换
-                }
+                // query: {
+                //     presets: ['latest'] //按照最新的ES6语法规则去转换
+                // },
+                options: {
+                    plugins: ["syntax-dynamic-import"]
+                },
+
             },
             {
                 test: /\.jsx$/,

@@ -1,5 +1,7 @@
 <template>
   <section class="real-app">
+  
+    <button @click="goto">dd</button>
     <input 
       type="text"
       class="add-input"
@@ -28,6 +30,16 @@ import Item from './Item.vue'
 import Tabs from './Tabs.vue'
 let id = 0
 export default {
+  beforeRouteEnter (to, from, next) {
+    // ...
+    next(vm=>{
+      // vm==this
+    })
+  },
+  beforeRouteLeave (to, from, next) {
+    // ...
+    next()
+  },
   data() {
     return{
       todos:[],
@@ -35,6 +47,9 @@ export default {
     }
   },
   methods: {
+    goto(){
+      this.$router.push("/Login")
+    },
     addTodo(e){
       this.todos.unshift({
         id: id++,
